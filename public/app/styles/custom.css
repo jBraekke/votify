@@ -1,0 +1,50 @@
+.background-pole{
+    height: 4px;
+    width: 100%;
+    background: white;
+    margin-top: 20px;
+ }
+ 
+.background-ratio{
+    position: inherit;
+    height: 4px;
+    background: orange;
+    width: 49%;
+    -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -o-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    transition:width 300ms ease-in-out, height 300ms ease-in-out;
+}
+
+.btn.selection{
+    white-space: initial;
+}
+
+.btn-primary[disabled]{
+    background-color: white;
+    border-color: white;
+    color: grey;
+}
+
+span.or{
+    border: white 3px solid;
+    padding: 6px;
+    border-radius: 100px;
+    position: absolute;
+    right: -18px;
+    top: 7px;
+    font-size: 13px;
+}
+
+.padding-left{
+    padding-left: 30px;
+}
+.padding-right{
+    padding-right: 30px;
+}
+
+.vote{
+    margin-bottom: 40px;
+    background-color: rgba(128, 128, 128, 0.25);
+        padding: 25px 0px 0px 10px;
+}

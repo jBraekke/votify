@@ -1,0 +1,58 @@
+<div>
+	<div ng-include="'menu.html'"></div>
+	<snap-dragger></snap-dragger>
+	<snap-content snap-opt-tap-to-close="false">
+
+		<a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+			<span class="menutoggle">
+				<i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+				<i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+			</span>
+		</a>
+		
+		<div class="fr">
+		<h2>Would you rather?</h2>
+		</div>
+			<div class="container">
+				<form name="battleForm" ng-submit="subBattle(battleForm)">
+					<!-- input stuff -->
+					<br/>
+					<div class="row">
+						<div class="col-xs-6 padding-right">
+							<input type="text" class="form-control input-lg" name="leftValue" placeholder="Coca Cola" ng-model="leftValue">
+							<span class="or">OR</span>
+						</div>
+						<div class="col-xs-6 padding-left">
+							<input type="text" class="form-control input-lg col-md-6" name="rightValue" placeholder="Pepsi" ng-model="rightValue">
+						</div>
+					</div>
+					<br/>
+					<!-- do battle -->
+					<div class="col-md-12 text-center">
+						<input class="btn btn-primary btn-lg btn-white" type="submit" id="submit" value="Submit" />
+					</div>
+				</form>
+				
+				<br/><br class="hidden-xs" /><br class="hidden-xs"/><br class="hidden-xs"/>
+				<div class="row vote" ng-repeat="vote in votes track by $index">
+					<div class="col-xs-6 text-center">
+						<p ng-click="makeVote(vote, 'left'); vote.clicked=true" ng-disabled="vote.voted.side === 'left' || vote.clicked" class="btn btn-primary btn-lg btn-white col-xs-12 selection">{{vote.leftQuestion}}</p>
+					</div>
+					<div class="col-xs-6 text-center">
+						<p ng-click="makeVote(vote, 'right'); vote.clicked=true" ng-disabled="vote.voted.side === 'right' || vote.clicked" class="btn btn-primary btn-lg btn-white col-xs-12 selection" >{{vote.rightQuestion}}</p>
+					</div>
+					<div class="col-xs-12">
+						<div class="background-pole">
+							<div class="background-ratio" ng-style="{'width': vote.ratio + '%'}"></div>
+						</div>
+						<h3 class="text-center"><span class="">{{vote.leftQuestionVotes}}</span> vs <span class="">{{vote.rightQuestionVotes}}</span></h3>
+					</div>
+				</div>
+				
+				<!--
+				<p>
+					<a ui-sref="login" class="btn btn-primary btn-lg btn-white">Logout</a>
+				</p>-->
+			</div>
+	</snap-content>	
+</div>
